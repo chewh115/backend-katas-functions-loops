@@ -1,25 +1,38 @@
 #!/usr/bin/env python
 """Implements math functions without using operators except for '+' and '-' """
 
-__author__ = "???"
+__author__ = """chewh115, and Rob, David and I talked about how to handle
+negatives, so I incorporated that in my code as well."""
 
 
 def add(x, y):
     """Add two integers. Handles negative values."""
-    # your code here
-    return
+    return x+y
 
 
 def multiply(x, y):
     """Multiply x with y. Handles negative values of x or y."""
-    # your code here
-    return
+    negative = False
+    if x < 0 and y > 0:
+        negative = True
+    elif x > 0 and y < 0:
+        negative = True
+    x = abs(x)
+    y = abs(y)
+    total = 0
+    for _ in range(y):
+        total = add(total, x)
+    if negative:
+        total = -total
+    return total
 
 
 def power(x, n):
     """Raise x to power n, where n >= 0"""
-    # your code here
-    return
+    total = 1
+    for _ in range(n):
+        total = multiply(total, x)
+    return total
 
 
 def factorial(x):
