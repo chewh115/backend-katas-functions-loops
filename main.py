@@ -37,14 +37,22 @@ def power(x, n):
 
 def factorial(x):
     """Compute factorial of x, where x > 0"""
-    # your code here
-    return
+    total = 1
+    for i in range(x):
+        total = multiply(total, (x-i))
+    return total
 
 
 def fibonacci(n):
     """Compute the nth term of fibonacci sequence"""
-    # your code here
-    return
+    total = 0
+    prev_num = 0
+    prev_prev_num = 1
+    for i in range(n):
+        total = add(prev_prev_num, prev_num)
+        prev_prev_num = prev_num
+        prev_num = total
+    return total
 
 
 if __name__ == '__main__':
